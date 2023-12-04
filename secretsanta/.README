@@ -1,0 +1,28 @@
+This Bash script is designed to perform a gift exchange (Secret Santa) among a list of participants while considering exclusions. Let's break down the script step by step:
+
+Function: tirage_cadeaux()
+
+This function handles the actual process of drawing names for the gift exchange.
+It shuffles the list of participants randomly using the shuf command.
+It initializes lists of givers and receivers as copies of the shuffled list.
+It iterates through each giver, excluding self-gifting and pairs with specified exclusions.
+If a valid pair cannot be formed (due to exclusions), it returns an error code.
+Otherwise, it randomly selects a receiver from the remaining candidates, updates the lists, and adds the pair to the gift list.
+User Input: Participants
+
+The script prompts the user to input the list of participants, with 'terminé' (French for 'finished') as the terminator for input.
+The list is stored in the participants array.
+Checking Participant Count:
+
+The script checks if the number of participants is even. If not, it prompts the user to enter an even number of participants and exits if an odd number is provided.
+Reading Exclusion Pairs:
+
+The script reads the first input after the participant list as exclusion pairs.
+Exclusion pairs are pairs of participants who should not be paired together.
+Gift Exchange Loop:
+
+The script attempts to perform the gift exchange using the tirage_cadeaux function.
+If a valid pair cannot be formed (due to exclusions), it informs the user and retries.
+Displaying Results:
+
+Once a successful gift exchange is completed, the script displays the results by printing out the pairs formed.
